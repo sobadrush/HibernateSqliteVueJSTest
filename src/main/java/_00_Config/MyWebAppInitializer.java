@@ -18,7 +18,8 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
          
     	// 【https://www.mkyong.com/spring-mvc/spring-mvc-how-to-set-active-profile/】
-    	servletContext.setInitParameter("spring.profiles.active", "sqlite");
+//    	servletContext.setInitParameter("spring.profiles.active", "sqlite");
+    	servletContext.setInitParameter("spring.profiles.active", "mssql_home");
     	
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(RootConfig.class);

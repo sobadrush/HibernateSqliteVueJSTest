@@ -119,6 +119,18 @@ public class RootConfig {
 		ds.setPassword("f3ru9cj4");
 		return ds;
 	}
+	
+	@Bean
+	@Profile("mssql_home")
+	public DataSource driverManagerDatasourceHome() {
+		System.err.println("====================【mssql_home】===================");
+		DriverManagerDataSource ds = new DriverManagerDataSource();
+		ds.setUrl("jdbc:sqlserver://127.0.0.1:1433;databaseName=DB_Emp_Dept");
+		ds.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		ds.setUsername("sa");
+		ds.setPassword("sa123456");
+		return ds;
+	}
 
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(DataSource ds) {
